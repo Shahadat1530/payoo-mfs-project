@@ -13,6 +13,12 @@ document.getElementById('btn-add-money').addEventListener('click', function(even
         const newBalance = addMoney + balanceNumber;
         
         document.getElementById('account-balance').innerText = newBalance;
+
+        // transaction history
+         const p = document.createElement('p');
+         p.innerText = `Added : ${addMoney}tk. New Balance ${newBalance}`;
+
+         document.getElementById('transaction-container').appendChild(p);
     }
     else {
         alert('Try Again Later!!');
@@ -25,15 +31,32 @@ document.getElementById('btn-cashout').addEventListener('click', function(event)
 
     const cashOutMoneyInput = document.getElementById('cashout-input').value;
     const pinCashInput = document.getElementById('cashout-pin-input').value;
+
+    if (isNaN(cashOutMoneyInput)) {
+        alert('Failed to cash out');
+        return;
+    }
     
     if (pinCashInput === '1234') {
         const balance = document.getElementById('account-balance').innerText;
 
         const cashOut = parseFloat(cashOutMoneyInput);
         const balanceNumber = parseFloat(balance);
+
+        if (cashOutMoneyInput > balanceNumber) {
+            alert('Not enough money to cash out');
+            return;
+        }
+
         const newBalance = balanceNumber - cashOut;
         
         document.getElementById('account-balance').innerText = newBalance;
+
+         // transaction history
+         const p = document.createElement('p');
+         p.innerText = `Withdrew : ${cashOut}tk. New Balance ${newBalance}`;
+
+         document.getElementById('transaction-container').appendChild(p);
     }
     else {
         alert('Try Again Later!!');

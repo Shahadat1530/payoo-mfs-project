@@ -28,6 +28,7 @@
                     <div>
                         <button id="show-add-money" class="btn btn-lg">Add Money</button>
                         <button id="show-cash-out" class="btn btn-lg">Cash Out</button>
+                        <button id="show-transactions" class="btn btn-lg">Transactions</button>
                     </div>
                     <div class="divider"></div>
 
@@ -38,13 +39,15 @@
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input id="money-input" type="text" placeholder="amount" class="input input-bordered" required />
+                                <input id="money-input" type="text" placeholder="amount" class="input input-bordered"
+                                    required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Pin</span>
                                 </label>
-                                <input id="pin-num-input" type="password" placeholder="pin" autocomplete="off" class="input input-bordered" required />
+                                <input id="pin-num-input" type="password" placeholder="pin" autocomplete="off"
+                                    class="input input-bordered" required />
                             </div>
                             <div class="form-control mt-6">
                                 <button id="btn-add-money" class="btn btn-primary">Add Money</button>
@@ -60,20 +63,29 @@
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input id="cashout-input" type="text" placeholder="amount" class="input input-bordered" required />
+                                <input id="cashout-input" type="text" placeholder="amount" class="input input-bordered"
+                                    required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Pin</span>
                                 </label>
-                                <input id="cashout-pin-input" type="password" placeholder="pin" autocomplete="off" class="input input-bordered" required />
+                                <input id="cashout-pin-input" type="password" placeholder="pin" autocomplete="off"
+                                    class="input input-bordered" required />
                             </div>
                             <div class="form-control mt-6">
                                 <button id="btn-cashout" class="btn btn-primary">Cash Out</button>
                             </div>
                         </form>
                     </div>
-                     <!-- cash out end -->
+                    <!-- cash out end -->
+
+                    <!-- transaction history -->
+                    <div id="transaction-section" class="hidden">
+                        <h2 class="text-3xl">Transaction History</h2>
+                        <div id="transaction-container">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
